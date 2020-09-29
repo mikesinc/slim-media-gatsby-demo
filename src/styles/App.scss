@@ -43,13 +43,12 @@ $parallax-perspective: 8px;
 
 .banner {
   display: flex;
-  // justify-self: center;
+  justify-self: center;
   justify-content: center;
   align-items: center;
   height: 100vh;
   flex-direction: column;
-  // background: radial-gradient(farthest-side at 50% 0%, rgba(94, 92, 0, 0.5), rgba(0, 0, 0, 1));
-  background: white;
+  background: radial-gradient(farthest-side at 50% 0%, rgba(94, 92, 0, 0.5), rgba(0, 0, 0, 1));
   background-blend-mode: darken;
   padding: 0 !important;
 }
