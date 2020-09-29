@@ -1,0 +1,280 @@
+@font-face {
+  font-family: "delirium";
+  src: url("../assets/fonts/FTY DELIRIUM NCV.ttf");
+}
+@font-face {
+  font-family: "robcond";
+  src: url("../assets/fonts/RobotoCondensed-Light.ttf");
+}
+@font-face {
+  font-family: "gobold";
+  src: url("../assets/fonts/Gobold Bold.otf");
+}
+
+/*variables*/
+$primary_colour: white;
+$secondary_colour: yellow;
+$parallax-perspective: 8px;
+/*animations*/
+@keyframes noise-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i * (1 / $steps))} {
+      clip: rect(random(500) + px, 9999px, random(500) + px, 0);
+    }
+  }
+}
+@keyframes noise-anim-2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i * (1 / $steps))} {
+      clip: rect(random(500) + px, 9999px, random(500) + px, 0);
+    }
+  }
+}
+
+.overall {
+  font-family: robcond;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: white;
+  font-size: 20px;
+}
+
+.banner {
+  display: flex;
+  // justify-self: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  // background: radial-gradient(farthest-side at 50% 0%, rgba(94, 92, 0, 0.5), rgba(0, 0, 0, 1));
+  background: white;
+  background-blend-mode: darken;
+  padding: 0 !important;
+}
+#coming_soon {
+  font-size: 32px;
+  font-family: Helvetica;
+}
+.backgroundVideo {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  position: absolute;
+}
+.glitch {
+  padding: 0 !important;
+  font-family: delirium;
+  color: $primary_colour;
+  font-size: 248px;
+  display: flex;
+  justify-content: center;
+}
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  text-shadow: 5px 0 $secondary_colour;
+  color: $primary_colour;
+  overflow: hidden;
+  clip: rect(500px, 500px, 500px, 500px);
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+.glitch:before {
+  content: attr(data-text);
+  position: absolute;
+  text-shadow: -2px 0 $secondary_colour;
+  color: $primary_colour;
+  overflow: hidden;
+  clip: rect(500px, 500px, 500px, 500px);
+  animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 !important;
+  background-color: rgba(0,0,0,0.5);
+  background-size: cover;
+  background-blend-mode: darken;
+  height: 500px;
+}
+.about p {
+  font-size: 14px;
+  text-align: justify;
+  margin: 0px 30px 0px;
+  max-width: 50%;
+  width: 90%;
+}
+@media screen and (min-width: 768px) {
+  .about {
+    height: 800px;
+  }
+  .about p {
+    font-size: 16px;
+    margin: 0px 40px 0px;
+    max-width: 40%;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .about {
+    height: 1200px;
+    background-size: cover;
+    background-position: center;
+  }
+  .about p {
+    font-size: 26px;
+    margin: 0px 100px 0px;
+    max-width: 40%;
+  }
+}
+
+.portfolio {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+  background-color: black;
+}
+.portfolioVideo {
+  width: 90%;
+  height: 300px;
+}
+@media screen and (min-width: 768px) {
+  .portfolio {
+    padding: 100px 0px 0px;
+    height: 800px;
+  }
+  .portfolioVideo {
+    height: 500px;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .portfolio {
+    height: 1000px;
+  }
+  .portfolioVideo {
+    height: 700px;
+    margin-bottom: 50px;
+  }
+}
+
+.fightweek {
+  text-align: center;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 50px 0px 100px;
+}
+.fightweek h1 {
+  font-family: gobold;
+  padding: 50px 0px 20px;
+}
+.fightVideo {
+  width: 90%;
+  height: 200px;
+}
+@media screen and (min-width: 768px) {
+  .fightweek {
+    padding: 100px 0px 100px;
+    height: 1000px;
+  }
+  .fightVideo {
+    margin: 50px 0px 0px;
+    height: 500px;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .fightweek {
+    height: 1500px;
+  }
+  .fightVideo {
+    height: 700px;
+    width: 1250px;
+  }
+}
+
+
+
+.contact {
+  background-color: rgba(0,0,0,0.7);
+  background-size: cover;
+  background-position: right;
+  background-blend-mode: darken;
+}
+.contact h1 {
+  font-family: delirium;
+}
+.links {
+  margin: 20px 0px 20px !important;
+}
+.links a {
+  padding: 5px;
+}
+.links img {
+  color: white;
+}
+.author {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.author a {
+  font-size: 6px;
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .contact {
+    padding: 0px 50px 0px !important;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .contact {
+    height: 800px;
+    padding: 0px 100px 0px !important;
+  }
+  .author a {
+    font-size: 12px;
+  }
+  .links {
+    padding: 100px 0px 0px;
+  }
+}
+
+/*NavBar*/
+.navy {
+  font-family: delirium;
+  font-size: 46px;
+}
+.nav-link {
+  padding: 30px !important;
+  transition: 1s;
+}
+.shrunk {
+  padding: 10px !important;
+  font-size: 32px;
+}
+.nav-link:hover {
+  color: yellow !important;
+}
+@media screen and (max-width: 997px) {
+  .nav-link {
+    background: black !important;
+    padding: 20px !important;
+    font-size: 48px;
+  }
+}
+@media screen and (max-height: 414px) {
+  .nav-link {
+    padding: 5px !important;
+    font-size: 12px;
+  }
+}
